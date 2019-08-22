@@ -15,6 +15,12 @@ export function getInfo(token) {
     params: { token }
   })
 }
+export function getList() {
+  return request({
+    url: '/user/list',
+    method: 'get'
+  })
+}
 export function logout() {
   return request({
     url: '/user/logout',

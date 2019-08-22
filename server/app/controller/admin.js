@@ -2,7 +2,7 @@
 
 const Controller = require('egg').Controller;
 const MD5 = require('md5')
-class LoginController extends Controller {
+class AdminController extends Controller {
   async login() {
     const { ctx } = this;
     let query=ctx.request.body
@@ -34,7 +34,7 @@ class LoginController extends Controller {
   async getInfo(){
     const {ctx} = this
     if(ctx.request.query.token="admin_token"){
-      var rs = await ctx.service.user.find(1)
+      var rs = await ctx.service.admin.find(1)
       var admin = rs[0].dataValues
       console.log(admin)
       ctx.body={
@@ -56,4 +56,4 @@ class LoginController extends Controller {
   }
 }
 
-module.exports = LoginController;
+module.exports = AdminController;

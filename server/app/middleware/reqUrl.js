@@ -2,7 +2,7 @@
 
 module.exports = options=>{
     return async function reqUrl(ctx,next){
-        console.log(ctx.request)
+        // console.log(ctx.request)
         await next()
     }
 }
