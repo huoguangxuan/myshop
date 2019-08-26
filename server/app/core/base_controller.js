@@ -18,7 +18,7 @@ class BaseController extends Controller {
         }
         this.ctx.status = status || 200;
     }
-    faild(data,status){
+    fail(data,status){
         this.ctx.body={
             code:this.ctx.ERROR_CODE,
             data:data        
