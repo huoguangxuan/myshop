@@ -22,15 +22,17 @@ const mutations = {
 const actions = {
   // user login
   login({ commit }, userInfo) {
+
     const { username, password } = userInfo
     return new Promise((resolve, reject) => {
       login({ username: username.trim(), password: password }).then(response => {
+        console.log()
         const { data } = response
         commit('SET_TOKEN', data.token)
         setToken(data.token)
         resolve()
       }).catch(error => {
-         console.log('jiekou请求失败')
+         console.log(error);
         reject(error)
       })
     })

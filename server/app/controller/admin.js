@@ -1,52 +1,30 @@
 'use strict';
 
-const Controller = require('egg').Controller;
+const Controller = require('../core/base_controller')
 const MD5 = require('md5')
 class AdminController extends Controller {
   async login() {
-    const { ctx } = this;
+    const { ctx,app } = this;
     let query=ctx.request.body
-    let res = await ctx.model.Admin.findAll({
-      where:{
-        username:query.username
-      }
-    })
-    const name = res[0].dataValues.username
-    const password = res[0].dataValues.password
-
-    if(name && password==MD5(query.password)){
-      const token = 'admin_token'
-      ctx.body = {
-        code:20000,
-        data:{
-          massage:'登录成功',
-          token
-        }
-        
-      };
-    }else{
-      ctx.body ={
-        code:1,
-        massage:'登录失败'
-      };
+    let admin = await ctx.service.admin.find(query)
+    if (app._.isEmpty(admin)) {
+      return this.fail(ctx.ERROR_CODE, '账号或密码错误');
     }
+    const {id:uid,username} =admin;
+    const rs= {uid,username}
+    ctx.session.username=ctx.request.body.username
+    ctx.session.userid=uid
+    ctx.setToken(rs)
+    this.success({...rs,token:"huohuo"})
   }
   async getInfo(){
     const {ctx} = this
-    if(ctx.request.query.token="admin_token"){
-      var rs = await ctx.service.admin.find(1)
-      var admin = rs[0].dataValues
-      console.log(admin)
-      ctx.body={
-        code:20000,
-        data:admin
-        
-      }
-    }
+    console.log(ctx.request.query.token,ctx.session.username)
+    this.success()
   }
   async logout(){
     this.ctx.body={
-      code:20000,
+      code:0,
       data:{
         token:'',
         massage:'退出登录'

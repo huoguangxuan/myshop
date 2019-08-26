@@ -1,6 +1,5 @@
 
 'use strict';
-
 const Controller = require('egg').Controller;
 const MD5 = require('md5')
 class UserController extends Controller {

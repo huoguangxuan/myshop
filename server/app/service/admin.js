@@ -1,18 +1,19 @@
 const Service = require('egg').Service;
 const md5 = require('md5')
 const moment = require('moment')
-class UserService extends Service {
+class AdminService extends Service {
     
-  async find(uid) {
+  async find(query) {
     const {ctx} =this
-    
-    const admin = ctx.model.Admin.findAll({
+    const rs = await ctx.model.Admin.findAll({
       where:{
-        id:uid
+        username:query.username,
+        password:md5(query.password)
       }
     })
+    const admin =rs[0].dataValues
     return admin;
   }
 }
 
-module.exports = UserService;
+module.exports = AdminService;

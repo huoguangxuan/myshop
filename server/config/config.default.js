@@ -26,16 +26,51 @@ module.exports = appInfo => {
   };
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_18618110533_1212';
-  
+    // redis
+  config.redis = {
+    clients: {
+      default: {
+        host: 'localhost',
+        port: '6379',
+        password: '',
+        db: '0',
+      },
+      subscribe: {
+        host: 'localhost',
+        port: '6379',
+        password: '',
+        db: '1',
+      },
+      session: {
+        host: 'localhost',
+        port: '6379',
+        password: '',
+        db: '2',
+      },
+    },
+    agent: true,
+  };
+
+  exports.sessionRedis = {
+    name: 'session', // specific instance `session` as the session store
+  };
   // add your middleware config here
   config.middleware = [];
   config.security = {
     csrf: {
       enable: false,
-      ignoreJSON: true, // 默认为 false，当设置为 true 时，将会放过所有 content-type 为 `application/json` 的请求
+      // ignoreJSON: true, // 默认为 false，当设置为 true 时，将会放过所有 content-type 为 `application/json` 的请求
     },
     domainWhiteList: [ 'http://localhost:9528' ],
   };
+
+
+  // jwt
+  exports.jwt = {
+    secret: '123456',
+    // ignore: '/weapp',
+  };
+
   config.cors = {
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
   };
