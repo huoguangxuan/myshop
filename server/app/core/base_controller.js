@@ -11,7 +11,7 @@ class BaseController extends Controller {
         return this.ctx.session.user;
     }
 
-    success(data,status) {
+    success(data,status) {  
         this.ctx.body={
             code: this.ctx.SUCCESS_CODE,
             data,
