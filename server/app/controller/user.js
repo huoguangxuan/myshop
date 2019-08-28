@@ -7,7 +7,7 @@ class UserController extends Controller {
       const {ctx} =this
       const userList = await ctx.service.user.find()
       this.ctx.body={
-          code:20000,
+          code:0,
           data:userList,
       }
   }

@@ -106,11 +106,11 @@ export default {
       })
     },
     handleLogin() {
+      console.log(document.cookie) //前台取cookie
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true
           this.$store.dispatch('admin/login', this.loginForm).then(() => {
-            console.log('go1')
             this.$router.push({ path: this.redirect || '/' })
             this.loading = false
           }).catch(() => {

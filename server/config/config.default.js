@@ -55,7 +55,7 @@ module.exports = appInfo => {
     name: 'session', // specific instance `session` as the session store
   };
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = ['auth','errorHandler'];
   config.security = {
     csrf: {
       enable: false,
