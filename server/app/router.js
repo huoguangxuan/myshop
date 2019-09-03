@@ -12,6 +12,7 @@ module.exports = app => {
   router.get('/admin/info', controller.admin.getInfo);
   router.get('/user/list', controller.user.userList);
   router.get('/goods/list', controller.goods.index);
+  router.get('/goods/cate', controller.goods.cate);
   // router.get('/user/list', controller.user.getUsers);
   // router.get('/login', controller.login.index);
 };

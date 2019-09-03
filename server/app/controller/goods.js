@@ -19,6 +19,12 @@ class GoodsController extends Controller {
     ]
     this.success(goodList)
   }
+  async cate(){
+    const {ctx}= this
+    const rs = await ctx.service.goodscate.getCate()
+    // console.log(rs)
+    this.success(rs)
+  }
 }
 
 module.exports = GoodsController;
