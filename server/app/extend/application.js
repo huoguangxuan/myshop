@@ -1,5 +1,6 @@
 const _ = require('lodash')
 
+const TRANSITION = Symbol('Application#transition');
 module.exports={
     _,
     // 事务

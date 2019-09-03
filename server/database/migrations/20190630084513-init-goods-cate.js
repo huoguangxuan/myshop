@@ -83,7 +83,7 @@ module.exports = {
     }).then(()=>{
       return queryInterface.addIndex('goods_cate',{
         name:'pid',
-        unique:true,
+        unique:false,
         fields:['pid']
       })
     });

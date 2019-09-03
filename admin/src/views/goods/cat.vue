@@ -1,6 +1,15 @@
 <template>
   <div class="app-container">
-    <h1>商品列表</h1>
+    <el-input v-model="filterText" placeholder="Filter keyword" style="margin-bottom:30px;" />
+
+    <el-tree
+      ref="tree2"
+      :data="data2"
+      :props="defaultProps"
+      :filter-node-method="filterNode"
+      class="filter-tree"
+      default-expand-all
+    />
   </div>
 </template>
 
@@ -12,39 +21,29 @@ export default {
       filterText: '',
       data2: [{
         id: 1,
-        label: '时蔬水果，网上菜场',
+        label: '新鲜水果',
         children: [{
           id: 4,
-          label: 'Level two 1-1',
+          label: '时令水果',
           children: [{
             id: 9,
-            label: 'Level three 1-1-1'
+            label: '柚子'
           }, {
             id: 10,
-            label: 'Level three 1-1-2'
+            label: '冬枣'
           }]
         }]
       }, {
         id: 2,
-        label: '干货市场',
+        label: '蔬菜蛋品',
         children: [{
           id: 5,
-          label: 'Level two 2-1'
+          label: '叶类'
         }, {
           id: 6,
-          label: 'Level two 2-2'
+          label: '根茎类'
         }]
-      }, {
-        id: 3,
-        label: 'Level one 3',
-        children: [{
-          id: 7,
-          label: 'Level two 3-1'
-        }, {
-          id: 8,
-          label: 'Level two 3-2'
-        }]
-      }],
+      },],
       defaultProps: {
         children: 'children',
         label: 'label'

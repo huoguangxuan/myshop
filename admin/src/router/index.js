@@ -42,7 +42,6 @@ export const constantRoutes = [
     component: () => import('@/views/404'),
     hidden: true
   },
-
   {
     path: '/',
     component: Layout,
@@ -54,7 +53,6 @@ export const constantRoutes = [
       meta: { title: 'Dashboard', icon: 'dashboard' }
     }]
   },
-
   {
     path: '/manage',
     component: Layout,
@@ -69,10 +67,16 @@ export const constantRoutes = [
         meta: { title: '用户列表', icon: 'user' }
       },
       {
-        path: 'goods',
+        path: '/goods',
         name: 'Goods',
         component: () => import('@/views/goods/index'),
-        meta: { title: '商品列表', icon: 'tree' }
+        meta: { title: '商品列表', icon: 'list' }
+      },
+      {
+        path: '/goods/cat',
+        name: 'GoodsCat',
+        component: () => import('@/views/goods/cat'),
+        meta: { title: '商品分类', icon: 'tree' }
       }
     ]
   },

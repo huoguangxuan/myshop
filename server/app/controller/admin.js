@@ -26,7 +26,7 @@ class AdminController extends Controller {
   async logout(){
     const {ctx} =this
     ctx.removeToken()
-    ctx.success()
+    this.success()
   }
 }
 
