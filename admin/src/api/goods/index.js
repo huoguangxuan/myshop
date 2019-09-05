@@ -9,10 +9,16 @@ export function getGoodsList() {
 }
 
 
-export function getGoodsCat() {
+export function getGoodsCat(token) {
+  console.log(token)
   return request({
-    url: '/goods/cat',
+    url: '/goods/cate',
     method: 'get',
     params: { token }
   })
 }
+
+// module.exports={
+//   getGoodsCat,
+//   getGoodsList
+// }

@@ -106,7 +106,6 @@ export default {
       })
     },
     handleLogin() {
-      console.log(document.cookie) //前台取cookie
       this.$refs.loginForm.validate(valid => {
         if (valid) {
           this.loading = true
