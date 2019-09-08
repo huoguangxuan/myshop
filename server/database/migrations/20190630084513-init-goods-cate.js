@@ -23,17 +23,17 @@ module.exports = {
     },
     cate_img:{
       type:Sequelize.STRING,
-      allowNull: false,
+
       defaultValue: ''
     },
     filter_attr:{
       type:Sequelize.STRING,
-      allowNull: false,
+
       defaultValue: ''
     },
     link:{
       type:Sequelize.STRING,
-      allowNull: false,
+
       defaultValue: ''
     },
     pid:{
@@ -41,29 +41,28 @@ module.exports = {
       allowNull:false,
       defaultValue:0
     },
-    tempalte:{
+    template:{
       type:Sequelize.STRING,
-      allowNull: false,
+
       defaultValue: ''
     },
     sub_title:{
       type:Sequelize.STRING,
-      allowNull: false,
+
       defaultValue: ''
     },
     keywords:{
       type:Sequelize.STRING,
-      allowNull: false,
+
       defaultValue: ''
     },
     describtion:{
       type:Sequelize.STRING,
-      allowNull: false,
+
       defaultValue: ''
     },
     sort:{
       type: Sequelize.CHAR(1),
-      allowNull:false
     },
     add_time:{
       type: Sequelize.DATE,

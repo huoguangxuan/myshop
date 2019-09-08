@@ -6,7 +6,7 @@ class GoodsCateService extends Service {
   async getCate() {
     const {ctx} =this
     var cates = await ctx.model.GoodsCate.findAll()
-    console.log(cates)
+    // console.log(cates)
     return cates
   }
 }

@@ -32,7 +32,7 @@ module.exports = {
       defaultValue: ''
     },
     password:{
-      type:Sequelize.CHAR(8),
+      type:Sequelize.STRING,
       allowNull: false
     },
     mobile:{
@@ -44,7 +44,7 @@ module.exports = {
       allowNull:false
     },
     user_type:{
-      type: Sequelize.CHAR(1),
+      type: Sequelize.INTEGER(1),
       allowNull:false
     },
     status:{

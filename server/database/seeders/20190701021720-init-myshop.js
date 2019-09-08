@@ -67,6 +67,8 @@ module.exports = {
         add_time:moment().format('YYYY-MM-DD HH:mm:ss'),
         is_super: false
       }],{})
+  }).catch(e=>{
+    console.log(e)
   });
   },
 

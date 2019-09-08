@@ -11,7 +11,7 @@ module.exports = {
     */
    return queryInterface.createTable('admin', { 
     id:{
-      type: Sequelize.INTEGER,
+      type: Sequelize.INTEGER(),
       autoIncrement:true,
       primaryKey:true,
       allowNull:false
@@ -22,7 +22,7 @@ module.exports = {
       defaultValue: ''
     },
     password:{
-      type:Sequelize.STRING(),
+      type:Sequelize.STRING(50),
       allowNull: false
     },
     mobile:{
@@ -35,6 +35,10 @@ module.exports = {
     },
     status:{
       type: Sequelize.CHAR(1),
+      allowNull: false,
+    },
+    avatar:{
+      type: Sequelize.STRING,
       allowNull: false,
     },
     role_id:{

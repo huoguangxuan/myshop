@@ -22,6 +22,8 @@ module.exports = {
     mobile:'123456',
     email:'huohuo@163.com',
     role_id:1,
+    user_type:1,
+    status:0,
     add_time:moment().format('YYYY-MM-DD HH:mm:ss'),
     is_super: false
   },{
@@ -32,7 +34,9 @@ module.exports = {
     password:md5('123456'),
     mobile:'123456',
     email:'ggsmida@163.com',
-    role_id:1,
+    role_id:2,
+    user_type:1,
+    status:0,
     add_time:moment().format('YYYY-MM-DD HH:mm:ss'),
     is_super: false
   },{
@@ -43,11 +47,15 @@ module.exports = {
     password:md5('123456'),
     mobile:'123456',
     email:'ddsmida@163.com',
-    role_id:1,
+    role_id:3,
+    user_type:1,
+    status:0,
     add_time:moment().format('YYYY-MM-DD HH:mm:ss'),
     is_super: false
   }
-], {});
+], {}).catch(e=>{
+  console.log(e)
+});
   },
 
   down: (queryInterface, Sequelize) => {
