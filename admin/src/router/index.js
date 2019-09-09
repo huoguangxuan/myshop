@@ -75,8 +75,8 @@ export const constantRoutes = [
       {
         path: '/goods/cate',
         name: 'GoodsCat',
-        component: () => import('@/views/goods/cate'),
-        meta: { title: '商品分类', icon: 'tree' }
+        component: () => import('@/views/goods/cate/index'),
+        meta: { title: '商品分类', icon: 'tree' },
       }
     ]
   },

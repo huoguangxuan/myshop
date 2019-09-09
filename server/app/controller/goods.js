@@ -25,6 +25,13 @@ class GoodsController extends Controller {
     // console.log(rs)
     this.success(rs)
   }
+
+  async addCate(){
+    const {ctx}= this
+    
+    console.log(ctx.request.body)
+    this.success()
+  }
 }
 
 module.exports = GoodsController;

@@ -17,7 +17,13 @@ export function getGoodsCat(token) {
     params: { token }
   })
 }
-
+export function addCate(data) {
+  return request({
+    url: '/goods/cate/add',
+    method: 'post',
+    data
+  })
+}
 // module.exports={
 //   getGoodsCat,
 //   getGoodsList
