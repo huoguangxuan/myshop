@@ -30,6 +30,7 @@ class GoodsController extends Controller {
     const {ctx}= this
     
     console.log(ctx.request.body)
+    await ctx.service.goodscate.addCate(ctx.request.body)
     this.success()
   }
 }

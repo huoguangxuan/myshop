@@ -12,11 +12,14 @@
             </el-form-item>
             
             <el-form-item label="启用状态">
-              <el-switch v-model="form.status" />
+              <el-switch v-model="form.status" 
+              active-value=0
+              inactive-value=1
+              />
             </el-form-item>
             <el-form-item label="关键字">
               <el-select
-                    v-model="form.value"
+                    v-model="form.keyWords"
                     multiple
                     filterable
                     allow-create
@@ -25,8 +28,8 @@
                     <el-option
                     v-for="item in options"
                     :key="item.value"
-                    :label="item.label"
-                    :value="item.value">
+                    :label="item.keyWords"
+                    :value="item.keyWords">
                     </el-option>
                 </el-select>
             </el-form-item>
@@ -55,11 +58,11 @@ export default {
       return {
         form:{},
         options:[{
-          label:"爱国",
+          keyWords:"爱国",
           value:1
         },
         {
-          label:"动作",
+          keyWords:"动作",
           value:2
         }
         ]
