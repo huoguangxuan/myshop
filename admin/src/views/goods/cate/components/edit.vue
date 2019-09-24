@@ -12,9 +12,9 @@
             </el-form-item>
             
             <el-form-item label="启用状态">
-              <el-switch v-model="form.status" 
-              active-value=0
-              inactive-value=1
+              <el-switch v-model.number="form.status" 
+              active-value='0'
+              inactive-value='1'
               />
             </el-form-item>
             <el-form-item label="关键字">
