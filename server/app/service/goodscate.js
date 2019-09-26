@@ -11,22 +11,19 @@ class GoodsCateService extends Service {
   }
 
   async addCate(item){
-    console.log(item)
     const desStr=item.keyWords.join(',')
     const val={
       title:item.name,
       pid:Number(item.pid),
       status:Number(item.status),
-      describtion:desStr
+      describtion:item.desc,
+      keywords:desStr,
+      sort:item.sort
     }
-    console.log(val)
-    // await this.ctx.model.GoodsCate.findOrCreate({where: {title: item.name}, defaults: val})
-    //       .then((goodsCate,created )=>{
-    //         console.log(goodsCate.get({
-    //           plain: true
-    //         }))
-    //         console.log(created)
-    //       })
+    
+    const rs = await this.ctx.model.GoodsCate.create(val)
+    console.log(rs)
+    return rs
   }
 }
 

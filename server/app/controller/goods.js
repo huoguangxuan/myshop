@@ -25,13 +25,12 @@ class GoodsController extends Controller {
     // console.log(rs)
     this.success(rs)
   }
-
   async addCate(){
-    const {ctx}= this
-    
-    console.log(ctx.request.body)
-    await ctx.service.goodscate.addCate(ctx.request.body)
-    this.success()
+    const {ctx}= this 
+    // console.log(ctx.request.body)
+    const data = await ctx.service.goodscate.addCate(ctx.request.body)
+    console.log(data)
+    this.success(data)
   }
 }
 

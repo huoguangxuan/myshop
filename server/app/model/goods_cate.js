@@ -3,13 +3,14 @@
 'use strict';
 
 module.exports = app => {
-  const { STRING, INTEGER,DATE ,CHAR} = app.Sequelize;
+  const { STRING, INTEGER,DATE ,CHAR,UUIDV1} = app.Sequelize;
 
   const GoodsCate = app.model.define('goods_cate', {
     id: {
-        type: INTEGER(11),
+        type: STRING(38),
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
+        defaultValue: UUIDV1,
       },
       title: {
         type: STRING(255),

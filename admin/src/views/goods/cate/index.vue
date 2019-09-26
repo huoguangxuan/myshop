@@ -20,7 +20,7 @@
         </info>
       </el-col>
     </el-row>
-    <el-dialog title="新增分类" :visible.sync="dialogFormVisible">
+    <el-dialog title="新增分类" :visible.sync="dialogFormVisible" :close-on-click-modal="false">
       <edit :root-node="rootNode" :current-node="currentNode" @on-cancel="onCancel" @on-submit="onSubmit"/>
     </el-dialog>
   </div>
