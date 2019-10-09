@@ -1,9 +1,9 @@
 /* jshint indent: 2 */
 
 'use strict';
-
+const moment = require('moment') ;
 module.exports = app => {
-  const { STRING, INTEGER,DATE ,CHAR,UUIDV1} = app.Sequelize;
+  const { STRING, DATE ,CHAR,UUIDV1} = app.Sequelize;
 
   const GoodsCate = app.model.define('goods_cate', {
     id: {
@@ -33,7 +33,7 @@ module.exports = app => {
         defaultValue: ''
       },
       pid: {
-        type: INTEGER(11),
+        type: STRING(255),
         allowNull: false,
         defaultValue: '0'
       },
@@ -62,7 +62,8 @@ module.exports = app => {
       },
       add_time: {
         type: DATE,
-        allowNull: true
+        allowNull: true,
+        defaultValue:moment().format('YYYY-MM-DD HH:mm:ss')
       },
       status: {
         type: CHAR(1),

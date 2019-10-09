@@ -81,18 +81,23 @@ export default {
     initData() {
       api.getGoodsCat(this.token).then(res => {
         this.data = res.data;
-        this.rootNode=  res.data.filter(f=>f.pid==0)
-        console.log(this.rootNode)
+        this.rootNode=  res.data.filter(f=>f.pid==0)  
       });
     },
     onSubmit(val){
       api.addCate(val).then(res=>{
-        console.log(res)
-      }).catch(err=>{
-        console.log(err)
+        if(res.data){
+          this.$message.success('添加成功')
+          this.initData()
+          this.dialogFormVisible = false
+        }else{
+            this.$message.info('分类已经存在，请查证后再添加')
+        }   
       })
     },
-    onCancel(){},
+    onCancel(){
+       this.dialogFormVisible = false
+    },
     addCate(){
      this.dialogFormVisible = true
     }
