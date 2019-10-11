@@ -79,13 +79,13 @@ export default {
       return data.title.indexOf(value) !== -1;
     },
     initData() {
-      api.getGoodsCat(this.token).then(res => {
+      api.goods.getGoodsCat(this.token).then(res => {
         this.data = res.data;
         this.rootNode=  res.data.filter(f=>f.pid==0)  
       });
     },
     onSubmit(val){
-      api.addCate(val).then(res=>{
+      api.goods.addCate(val).then(res=>{
         if(res.data){
           this.$message.success('添加成功')
           this.initData()

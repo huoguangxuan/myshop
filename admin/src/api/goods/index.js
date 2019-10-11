@@ -10,7 +10,6 @@ export function getGoodsList() {
 
 
 export function getGoodsCat(token) {
-  console.log(token)
   return request({
     url: '/goods/cate',
     method: 'get',
@@ -24,7 +23,17 @@ export function addCate(data) {
     data
   })
 }
-// module.exports={
-//   getGoodsCat,
-//   getGoodsList
-// }
+//删除分类
+export function destroyCate(id) {
+  return request({
+    url: '/goods/cate/destory',
+    method: 'delete',
+    params:{ id }
+  })
+}
+module.exports={
+  getGoodsCat,
+  getGoodsList,
+  addCate,
+  destroyCate
+}

@@ -14,6 +14,7 @@ module.exports = app => {
   router.get('/goods/list', controller.goods.index);
   router.get('/goods/cate', controller.goods.cate);
   router.post('/goods/cate/add', controller.goods.addCate);
+  router.delete(`/goods/cate/destroy?id=${id}`, controller.goods.destroyCate);
   // router.get('/user/list', controller.user.getUsers);
   // router.get('/login', controller.login.index);
 };

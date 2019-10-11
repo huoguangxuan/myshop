@@ -9,9 +9,10 @@ class GoodsCateService extends Service {
     // console.log(cates)
     return cates
   }
-
+  async destroyCate(){
+    
+  }
   async addCate(item){
-    // console.log(item)
     const desStr=item.keyWords.join(',')
     const val={
       title:item.name,
@@ -21,7 +22,6 @@ class GoodsCateService extends Service {
       keywords:desStr,
       sort:item.sort
     }
-    // const rs = await this.ctx.model.GoodsCate.create(val)
     const rs = await this.ctx.model.GoodsCate.findOrCreate({where: {title: val.title}, defaults: val})
     // .then(([goods_cate, created]) => {
     //   console.log(goods_cate.get({
