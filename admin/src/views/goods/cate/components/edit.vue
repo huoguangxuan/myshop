@@ -10,7 +10,6 @@
       <el-form-item label="分类名称" prop="name" required>
         <el-input v-model="form.name" />
       </el-form-item>
-      
       <el-form-item label="启用状态">
         <el-switch v-model="form.status" 
         active-value='0'

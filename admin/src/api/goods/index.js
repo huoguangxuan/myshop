@@ -26,9 +26,8 @@ export function addCate(data) {
 //删除分类
 export function destroyCate(id) {
   return request({
-    url: '/goods/cate/destory',
+    url: `/goods/cate/destroy/${id}`,
     method: 'delete',
-    params:{ id }
   })
 }
 module.exports={

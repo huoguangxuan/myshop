@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="!destroyView">
      <span class="title">{{currentNode.title}}</span>
           <p>添加时间：{{currentNode.add_time}}</p>
           <p>状态：{{currentNode.status}}</p>
@@ -13,7 +13,6 @@
             </div>
   </div>
 </template>
-
 <script>
 import api from '@/api'
 export default {
@@ -23,6 +22,9 @@ export default {
             default:()=>{
                 return {}
             }
+        },
+        destroyView:{
+            type:Boolean
         }
     },
     methods:{
@@ -30,6 +32,7 @@ export default {
         destroy(cate_id){
             api.goods.destroyCate(cate_id)
             .then(res=>{
+                this.$emit('to-cate')
                 this.$message.success('删除成功')
             })
         }

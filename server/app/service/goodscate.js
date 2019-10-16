@@ -9,8 +9,19 @@ class GoodsCateService extends Service {
     // console.log(cates)
     return cates
   }
-  async destroyCate(){
-    
+  async destroyCate(id){
+    const {ctx} =this
+    var childs= await ctx.model.GoodsCate.findByPk(id)
+    await ctx.model.GoodsCate.destroy({
+      where: {
+        id
+      }
+    })
+    await ctx.model.GoodsCate.destroy({
+      where:{
+        pid:id
+      }
+    })
   }
   async addCate(item){
     const desStr=item.keyWords.join(',')

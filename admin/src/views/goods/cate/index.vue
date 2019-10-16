@@ -16,7 +16,7 @@
         <el-button type="primary" class="mt20" @click="addCate" size="small">新增分类</el-button>
       </el-col>
       <el-col :span="17">
-        <info v-if="currentNode.title" :current-node="currentNode">
+        <info v-if="currentNode.title" @to-cate="updataView" :destroy-view="destroyView" :current-node="currentNode">
         </info>
       </el-col>
     </el-row>
@@ -42,6 +42,7 @@ export default {
       currentPid:0,
       currentNode: {},
       data: [],
+      destroyView:false,
       defaultProps: {
         children: "children",
         label: "title"
@@ -79,10 +80,15 @@ export default {
       return data.title.indexOf(value) !== -1;
     },
     initData() {
-      api.goods.getGoodsCat(this.token).then(res => {
+      api.goods.getGoodsCat(this.token)
+      .then(res => {
         this.data = res.data;
-        this.rootNode=  res.data.filter(f=>f.pid==0)  
+        this.rootNode=  res.data.filter(f=>f.pid==0)
       });
+    },
+    updataView(){
+      this.initData()
+      this.destroyView=true
     },
     onSubmit(val){
       api.goods.addCate(val).then(res=>{
@@ -91,7 +97,7 @@ export default {
           this.initData()
           this.dialogFormVisible = false
         }else{
-            this.$message.info('分类已经存在，请查证后再添加')
+          this.$message.info('分类已经存在，请查证后再添加')
         }   
       })
     },
@@ -128,4 +134,5 @@ export default {
   line-height: 40px;
   font-weight: 600;
 }
+
 </style>

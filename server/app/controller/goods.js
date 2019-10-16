@@ -31,10 +31,9 @@ class GoodsController extends Controller {
   }
   async destroyCate(){
     const {ctx}= this 
-    const id = this.ctx.request.body.id
-    console.log(this.ctx.request.body)
-    const data = await ctx.service.goodscate.destoryCate(id)
-      this.success(data)
+    const id = ctx.params.id
+    const data = await ctx.service.goodscate.destroyCate(id)
+    this.success(data)
   }
 }
 
