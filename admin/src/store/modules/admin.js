@@ -23,9 +23,9 @@ const actions = {
   // user login
   login({ commit }, userInfo) {
 
-    const { username, password } = userInfo
+    const { username, password, loginType } = userInfo
     return new Promise((resolve, reject) => {
-      login({ username: username.trim(), password: password }).then(response => {
+      login({ username: username.trim(), password: password, loginType:loginType }).then(response => {
         console.log(response)
         const token = Cookie.get('s_token')
         commit('SET_TOKEN', token)

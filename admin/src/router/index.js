@@ -67,20 +67,36 @@ export const constantRoutes = [
         meta: { title: '用户列表', icon: 'user' }
       },
       {
-        path: '/goods',
+        path: 'goods',
         name: 'Goods',
+        redirect: '/manage/goods/list',
         component: () => import('@/views/goods/index'),
-        meta: { title: '商品列表', icon: 'list' }
+        meta: { title: '商品管理', icon: 'list' },
+        children:[
+          {
+            hidden: true,
+            path: 'list',
+            name: 'list',
+            component: () => import('@/views/goods/list/index'),
+            meta: { title: '商品列表'}
+          },
+          {
+            hidden: true,
+            path: 'add',
+            name: 'add',
+            component: () => import('@/views/goods/add/index'),
+            meta: { title: '商品新增'}
+          },
+        ]
       },
       {
-        path: '/goods/cate',
-        name: 'GoodsCat',
+        path: 'goods-cate',
+        name: 'goodsCate',
         component: () => import('@/views/goods/cate/index'),
         meta: { title: '商品分类', icon: 'tree' },
       }
     ]
   },
-
   {
     path: '/form',
     component: Layout,

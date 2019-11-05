@@ -36,13 +36,10 @@ module.exports={
       },
       // 校验token
       async verifyToken() {
-        console.log('开始校验')
         const { app } = this;
         const username = this.cookies.get('username', { signed: false });
         const userid = this.cookies.get('uid', { signed: false });
-        console.log(userid)
         const token = this.getAccessToken(this);
-        console.log(token)
         const verifyResult = await new Promise(resolve => {
           app.jwt.verify(token, app.config.jwt.secret, (err, decoded) => {
             if (err) {

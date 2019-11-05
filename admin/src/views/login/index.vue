@@ -40,13 +40,18 @@
           <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />
         </span>
       </el-form-item>
-
+       <el-form-item prop="loginType" style="border:none;">
+        <el-radio-group v-model="loginForm.loginType">
+          <el-radio label="merchant">商家</el-radio>
+          <el-radio label="admin">管理员</el-radio>
+        </el-radio-group>
+      </el-form-item>
       <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">Login</el-button>
 
-      <!-- <div class="tips">
+      <div class="tips">
         <span style="margin-right:20px;">username: admin</span>
         <span> password: any</span>
-      </div> -->
+      </div>
 
     </el-form>
   </div>
@@ -75,7 +80,8 @@ export default {
     return {
       loginForm: {
         username: '',
-        password: ''
+        password: '',
+        loginType:'merchant'
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],

@@ -6,14 +6,8 @@ class AdminService extends Service {
   async find(query) {
     const {ctx} =this
     
-    const rs = await ctx.model.Admin.findAll(
-      // {
-      //   where:{
-      //     username:query.username,
-      //     password:md5(query.password)
-      //   }
-      // }
-    )
+    const rs = await ctx.model.Admin.findAll()
+
     const admin =rs[0].dataValues
     return admin;
   }
