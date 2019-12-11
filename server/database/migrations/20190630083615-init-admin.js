@@ -11,7 +11,7 @@ module.exports = {
     */
    return queryInterface.createTable('admin', { 
     id:{
-      type: Sequelize.INTEGER(),
+      type: Sequelize.INTEGER,
       autoIncrement:true,
       primaryKey:true,
       allowNull:false

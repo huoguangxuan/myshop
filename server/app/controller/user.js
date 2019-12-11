@@ -5,7 +5,8 @@ const MD5 = require('md5')
 class UserController extends Controller {
   async userList() {
       const {ctx} =this
-      const userList = await ctx.service.user.find()
+      const userList = await ctx.service.users.find()
+      // console.log(userList)
       this.ctx.body={
           code:0,
           data:userList,

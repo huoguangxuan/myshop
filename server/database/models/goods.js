@@ -5,8 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     title: {
       type: DataTypes.STRING(255),
@@ -117,8 +116,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     goods_type_id: {
       type: DataTypes.INTEGER(11),
-      allowNull: false,
-      unique: true
+      allowNull: false
     },
     status: {
       type: DataTypes.CHAR(1),

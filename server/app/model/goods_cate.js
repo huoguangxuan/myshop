@@ -3,14 +3,14 @@
 'use strict';
 const moment = require('moment') ;
 module.exports = app => {
-  const { STRING, DATE ,CHAR,UUIDV1} = app.Sequelize;
+  const { STRING, DATE ,CHAR,INTEGER} = app.Sequelize;
 
   const GoodsCate = app.model.define('goods_cate', {
     id: {
-        type: STRING(38),
+        type: INTEGER(11),
         allowNull: false,
         primaryKey: true,
-        defaultValue: UUIDV1,
+        autoIncrement:true
       },
       title: {
         type: STRING(255),

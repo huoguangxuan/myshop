@@ -5,8 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     title: {
       type: DataTypes.STRING(255),
@@ -15,48 +14,47 @@ module.exports = function(sequelize, DataTypes) {
     },
     cate_img: {
       type: DataTypes.STRING(255),
-      allowNull: false,
+      allowNull: true,
       defaultValue: ''
     },
     filter_attr: {
       type: DataTypes.STRING(255),
-      allowNull: false,
+      allowNull: true,
       defaultValue: ''
     },
     link: {
       type: DataTypes.STRING(255),
-      allowNull: false,
+      allowNull: true,
       defaultValue: ''
     },
     pid: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
-      defaultValue: '0',
-      unique: true
+      defaultValue: '0'
     },
-    tempalte: {
+    template: {
       type: DataTypes.STRING(255),
-      allowNull: false,
+      allowNull: true,
       defaultValue: ''
     },
     sub_title: {
       type: DataTypes.STRING(255),
-      allowNull: false,
+      allowNull: true,
       defaultValue: ''
     },
     keywords: {
       type: DataTypes.STRING(255),
-      allowNull: false,
+      allowNull: true,
       defaultValue: ''
     },
     describtion: {
       type: DataTypes.STRING(255),
-      allowNull: false,
+      allowNull: true,
       defaultValue: ''
     },
     sort: {
       type: DataTypes.CHAR(1),
-      allowNull: false
+      allowNull: true
     },
     add_time: {
       type: DataTypes.DATE,

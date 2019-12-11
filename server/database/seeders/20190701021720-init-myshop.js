@@ -34,7 +34,6 @@ module.exports = {
   }).then(data=>{
     return queryInterface.bulkInsert('users',[
       {
-        id:1,
         username:"huoguangxuan",
         nickname:"huohuo",
         avatar:'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
@@ -45,7 +44,6 @@ module.exports = {
         add_time:moment().format('YYYY-MM-DD HH:mm:ss'),
         is_super: false
       },{
-        id:2,
         username:"ggsmida",
         nickname:"ggsmida",
         avatar:'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
@@ -56,7 +54,6 @@ module.exports = {
         add_time:moment().format('YYYY-MM-DD HH:mm:ss'),
         is_super: false
       },{
-        id:3,
         username:"dddsmida",
         nickname:"dddsmida",
         avatar:'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',

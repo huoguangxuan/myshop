@@ -5,8 +5,7 @@ module.exports = function(sequelize, DataTypes) {
     id: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
+      primaryKey: true
     },
     bill_number: {
       type: DataTypes.STRING(255),
@@ -19,8 +18,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     uid: {
       type: DataTypes.INTEGER(11),
-      allowNull: true,
-      unique: true
+      allowNull: true
     },
     paycode: {
       type: DataTypes.STRING(255),
