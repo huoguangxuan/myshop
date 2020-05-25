@@ -6,10 +6,9 @@ class UsersService extends Service {
   async find(query) {
     const {ctx} =this
     
-    const rs = await ctx.model.Admin.findAll()
-
-    const admin =rs[0].dataValues
-    return admin;
+    const rs = await ctx.model.Users.findAll()
+    const users =rs
+    return users;
   }
 }
 

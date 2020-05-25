@@ -11,7 +11,7 @@ export function getGoodsList() {
 
 export function getGoodsCat(token) {
   return request({
-    url: '/goods/cate',
+    url: '/api/v1/goods/cate',
     method: 'get',
     params: { token }
   })

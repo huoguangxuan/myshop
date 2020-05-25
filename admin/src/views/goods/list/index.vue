@@ -40,14 +40,13 @@ export default {
       this.$refs.tree2.filter(val)
     }
   },
-
   methods: {
     filterNode(value, data) {
       if (!value) return true
       return data.label.indexOf(value) !== -1
     },
     addGoods(){
-      this.$router.push({name:'add'})
+      this.$router.push({name:'addGoods'})
     }
   }
 }

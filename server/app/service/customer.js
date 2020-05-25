@@ -1,11 +1,10 @@
 const Service = require('egg').Service;
 const md5 = require('md5')
-const moment = require('moment')
 class CustomerService extends Service {
-  async find(uid) {
+  async find(query) {
     const {ctx} =this
-    const rs= await ctx.model.Customer.findAll()
-    console.log(rs)
+    const rs= await ctx.model.Customer.findOne({where:{username:query.username,password:md5(query.password)}})
+    console.log("查的结果：",rs)
     return rs
   }
 }

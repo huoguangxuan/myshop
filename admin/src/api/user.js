@@ -10,14 +10,21 @@ export function login(data) {
 
 export function getInfo(token) {
   return request({
-    url: '/user/info',
+    url: '/api/v1/users',
     method: 'get',
   })
 }
 export function getList() {
   return request({
-    url: '/user/list',
+    url: '/api/v1/users',
     method: 'get',
+  })
+}
+export function addUser(data) {
+  return request({
+    url: '/api/v1/user/create',
+    method: 'post',
+    data
   })
 }
 export function logout() {

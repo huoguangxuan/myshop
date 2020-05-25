@@ -21,12 +21,12 @@ module.exports = (options, app) => {
       } else {
         // 管理端接口
         // 过滤登录接口和验证token
-        const ignorePaths = ['/admin/login', '/admin/logout'];
+        const ignorePaths = ['/admin/login', '/admin/logout','/admin/info'];
         // console.log(ctx.request)
-        const valid = await ctx.verifyToken();
-        if (valid || ignorePaths.includes(ctx.path)) {
-          await next();
-        }
+        // const valid = await ctx.verifyToken();
+        // if (valid || ignorePaths.includes(ctx.path)) {
+        //   await next();
+        // }
       }
     };
   };
